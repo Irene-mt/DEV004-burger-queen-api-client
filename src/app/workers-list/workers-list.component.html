@@ -1,1 +1,34 @@
-<p>workers-list works!</p>
+<app-header></app-header>
+<section class="workersList">
+    <nav class="options">
+        <ul>
+            <li>
+                <img src="https://i.ibb.co/k5J0dPM/workers-list-active.png" class="icon" />
+            </li>
+            <li>
+                <img src="https://i.ibb.co/Hgy04Mq/products-list.png" class="icon">
+            </li>
+            <li>
+                <img src="https://i.ibb.co/nmbvZRY/logout.png" class="icon" (click)="logOut()" />
+            </li>
+        </ul>
+    </nav>
+    <article class="workers">
+        <h1>WORKERS</h1>
+        <div class="workersRole">
+            <div class="btnsRoleContainer">
+                <button [class.active]="btnActive === 'chef'" class="btnRole"
+                    (click)="showSelectedWorkers('chef')">CHEF</button>
+                <button [class.active]="btnActive === 'waiter'" class="btnRole"
+                    (click)="showSelectedWorkers('waiter')">WAITER</button>
+                <button [class.active]="btnActive === 'admin'" class="btnRole"
+                    (click)="showSelectedWorkers('admin')">ADMIN</button>
+            </div>
+            <div class="containerCards">
+                <app-workers-card [AllWorkers]="filteredWorkers"></app-workers-card>
+            </div>
+        </div>
+    </article>
+    
+
+</section>

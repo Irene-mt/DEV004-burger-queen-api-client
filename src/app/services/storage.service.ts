@@ -21,4 +21,9 @@ export class StorageService {
     const id = localStorage.getItem('user-id');
     return JSON.stringify(id).replace(/['"]+/g, '');
   }
+
+  getToken(): string {
+    const token = localStorage.getItem('login-token');
+    return JSON.stringify(token).replace(/['"]+/g, '');
+  }
 }
