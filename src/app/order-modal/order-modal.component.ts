@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ProductToOrder } from '../interfaces/product-to-order';
 import { StorageService } from '../services/storage.service';
-import { Product } from '../interfaces/product';
 import { OrdersService } from '../services/orders.service';
+import { Order } from '../interfaces/order';
 
 @Component({
   selector: 'app-order-modal',
@@ -59,12 +59,28 @@ export class OrderModalComponent {
   }
 
   cancelOrder() {
-    this.orderList.splice(0)
+    this.orderList.splice(0);
+    this.totalPrice -= this.totalPrice
   }
 
   createOrder(customerName: string) {
     console.log(customerName);
-    // pending request http to create order
+    const orderData: Order = {
+      client: customerName,
+      products: this.orderList,
+      status: 'pending',
+      userId: this.userId,
+      dateEntry: new Date()
+    }
+    this.orders.postOrder(orderData).subscribe((res)=>{
+      console.log(res);
+      
+    })
+    this.orderList.splice(0);
+    this.totalPrice -= this.totalPrice
+
+
+
   }
 
 

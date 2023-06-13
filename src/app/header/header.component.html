@@ -1,5 +1,7 @@
 <header class="header">
-    <img src="../../assets/img/icon-user.png" class="icon-user">
+    <img src="https://i.postimg.cc/JtwxcF2S/waiter-icon.png" *ngIf="role === 'waiter'" class="icon-user">
+    <img src="https://i.postimg.cc/zGXQQKYw/chef-icon.png" *ngIf="role === 'chef'" class="icon-user">
+    <img src="https://i.postimg.cc/RVPdNY2f/admin-icon.png" *ngIf="role === 'admin'" class="icon-user">
     <div class="containerInfo">
         <p class="email-user">{{email}}</p>
         <p class="role-user">{{role}}</p>

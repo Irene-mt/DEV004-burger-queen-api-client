@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../services/products.service';
-import { AuthCurrentUserService } from '../services/auth-current-user.service';
 import { Product } from '../interfaces/product';
 import { ProductToOrder } from '../interfaces/product-to-order';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OrdersService } from '../services/orders.service';
+import { AuthLoginService } from '../services/auth-login.service';
 
 
 @Component({
@@ -32,7 +32,7 @@ export class FoodMenuComponent {
 
   constructor(
     public showProducts: ProductsService,
-    private logout: AuthCurrentUserService,
+    private logService: AuthLoginService,
     public orders: OrdersService,
   ) {
 
@@ -42,6 +42,8 @@ export class FoodMenuComponent {
     this.btnActive = type;
     this.showProducts.getProducts().subscribe((data) => {
       this.products = data;
+      
+      
       this.filteredItems = this.products.filter((eachProduct) => {
         return eachProduct.type === type;
       })
@@ -75,7 +77,7 @@ export class FoodMenuComponent {
   }
 
   logOut() {
-    this.logout.logout();
+    this.logService.logout();
   }
 
 

@@ -6,7 +6,7 @@ import { Order } from '../interfaces/order';
   providedIn: 'root'
 })
 export class OrdersService {
-body!: Order[]
+
 
   constructor(private http: HttpClient,
     ) { }
@@ -15,8 +15,8 @@ body!: Order[]
       return this.http.get('http://localhost:8080/orders')
     }
 
-    postOrder(){
-      return this.http.post('http://localhost:8080/orders', this.body)
+    postOrder(body: Order){
+      return this.http.post('http://localhost:8080/orders', body)
     }
 
     
