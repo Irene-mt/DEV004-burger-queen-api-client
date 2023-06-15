@@ -1,13 +1,12 @@
 <div class="WorkerCard" *ngFor="let worker of AllWorkers">
-    <img src="https://i.postimg.cc/JtwxcF2S/waiter-icon.png" *ngIf="worker.role === 'waiter'" class="imgUser">
-    <img src="https://i.postimg.cc/zGXQQKYw/chef-icon.png" *ngIf="worker.role === 'chef'" class="imgUser">
-    <img src="https://i.postimg.cc/RVPdNY2f/admin-icon.png" *ngIf="worker.role === 'admin'" class="imgUser">
+    <img src="https://i.postimg.cc/nrJbHsDb/waiter.png" *ngIf="worker.role === 'waiter'" class="imgUser">
+    <img src="https://i.postimg.cc/prJNy2f9/chef.png" *ngIf="worker.role === 'chef'" class="imgUser">
+    <img src="https://i.postimg.cc/4dtRkvnQ/admin.png" *ngIf="worker.role === 'admin'" class="imgUser">
     <p class="email">{{worker.email}}</p>
     <p class="role">{{worker.role}}</p>
     <p class="id">ID: {{worker.id}}</p>
     <div class="btnsWorker">
         <img src="https://i.postimg.cc/0Qv2NypZ/edit-icon.png" class="edit">
-        <img src="https://i.postimg.cc/CLqtcsyB/delete-icon.png" class="delete">
+        <img src="https://i.postimg.cc/CLqtcsyB/delete-icon.png" class="delete" (click)="deleteUser(worker.id)">
     </div>
-
 </div>

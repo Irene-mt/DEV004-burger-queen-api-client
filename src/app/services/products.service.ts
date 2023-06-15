@@ -10,6 +10,6 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<any>{
-    return this.http.get("https://virtserver.swaggerhub.com/ssinuco/BurgerQueenAPI/2.0.0/products")
+    return this.http.get("http://localhost:8080/products")
   }
 }

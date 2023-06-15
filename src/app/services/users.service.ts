@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { StorageService } from './storage.service';
+import { CreateWorker } from '../interfaces/create-worker';
 
 @Injectable({
   providedIn: 'root'
@@ -9,19 +9,18 @@ import { StorageService } from './storage.service';
 export class UsersService {
 
   constructor(private http: HttpClient,
-    private storage: StorageService
+    // private storage: StorageService
   ) { }
 
   getAllUsers() {
     return this.http.get("http://localhost:8080/users")
   }
 
-  getUserInfo(): Observable<any> {
-    const token  = this.storage.getToken()
-    const header = new HttpHeaders({
-      'Content-Type': 'application/json',
-      
-    });
-    return this.http.get("http://localhost:8080/users/{uid}", { headers: header })
+  createUser(body: CreateWorker){
+    return this.http.post('http://localhost:8080/users', body)
+  }
+
+  deleteUser(uid: number){
+    return this.http.delete(`http://localhost:8080/users/${uid}`)
   }
 }

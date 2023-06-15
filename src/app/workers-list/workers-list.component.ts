@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Worker } from '../interfaces/worker';
 import { UsersService } from '../services/users.service';
 import { AuthLoginService } from '../services/auth-login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-workers-list',
@@ -23,6 +24,7 @@ export class WorkersListComponent {
   constructor(
     private logService: AuthLoginService,
     public users: UsersService,
+    private router: Router,
   ) { }
 
   // ngOnInit(): void {
@@ -48,6 +50,10 @@ export class WorkersListComponent {
     }
       
     )
+  }
+
+  navigateProducts(){
+    this.router.navigate(['/products-list']);
   }
 
 
