@@ -1,0 +1,23 @@
+<article class="addProduct">
+    <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+        <h6>ADD WORKER</h6>
+        <p>Name:</p>
+        <input type="text" class="name" formControlName="name">
+        <p>Price:</p>
+        <input type="number" class="price" formControlName="price">
+        <p>Image:</p>
+        <input type="text" class="image" formControlName="image">
+        <p>Type:</p>
+        <select name="WorkerRole" formControlName="type">
+            <option value="breakfast">Breakfast</option>
+            <option value="meals">Meals</option>
+            <option value="desserts">Desserts</option>
+            <option value="drinks">Drinks</option>
+        </select>
+        <div class="containerBtns">
+            <button class="cancel">CANCEL</button>
+            <button class="confirm">CONFIRM</button>
+        </div>
+    </form>
+</article>
+<h5 class="message">{{messageConfirm}}</h5>

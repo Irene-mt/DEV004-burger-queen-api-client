@@ -60,17 +60,17 @@ h1 {
     display: flex;
 }
 
-.workers {
+.productsArticle {
     width: 80%;
     height: 100%;
     margin: 0 0 0 50px;
 }
 
-.btnsRoleContainer {
+.btnsTypeContainer {
     left: 50px;
 }
 
-.btnRole {
+.btnType {
     margin-right: 20px;
     font-family: 'Cabin', sans-serif;
     letter-spacing: 3px;

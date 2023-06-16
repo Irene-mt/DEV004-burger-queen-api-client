@@ -1,0 +1,10 @@
+<div class="productCard" *ngFor="let product of selectionProducts">
+    <img src={{product.image}} class="imgProduct">
+    <p class="name">{{product.name}}</p>
+    <p class="price">${{product.price}}</p>
+    <p class="id">ID: {{product.id}}</p>
+    <div class="btnsProduct">
+        <img src="https://i.postimg.cc/0Qv2NypZ/edit-icon.png" class="edit">
+        <img src="https://i.postimg.cc/CLqtcsyB/delete-icon.png" class="delete" (click)="deleteProduct(product.id)">
+    </div>
+</div>

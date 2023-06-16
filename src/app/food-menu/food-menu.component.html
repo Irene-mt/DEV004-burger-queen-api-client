@@ -20,16 +20,20 @@
         <h1>CATEGORY MENU</h1>
         <div class="productType">
             <div class="btnsType">
-                <button [class.active]="btnActive === 'Desayuno'" class="btnType"
-                    (click)="showSelectedItems('Desayuno')">BREAKFAST</button>
+                <button [class.active]="btnActive === 'breakfast'" class="btnType"
+                    (click)="showSelectedItems('breakfast')">BREAKFAST</button>
                 <button [class.active]="btnActive === 'meals'" class="btnType"
                     (click)="showSelectedItems('meals')">MEALS</button>
+                    <button [class.active]="btnActive === 'desserts'" class="btnType"
+                    (click)="showSelectedItems('desserts')">DESSERTS</button>
+                    <button [class.active]="btnActive === 'drinks'" class="btnType"
+                    (click)="showSelectedItems('drinks')">DRINKS</button>
             </div>
             <div class="allProducts">
                 <div class="productCard" *ngFor="let product of filteredItems">
                     <img src="{{product.image}}" alt="{{product.name}}" class="productImg">
                     <P class="productName">{{product.name}}</P>
-                    <p class="productPrice">S/. {{product.price}}</p>
+                    <p class="productPrice">$ {{product.price}}</p>
                     <img src="https://i.ibb.co/PDN4nLV/add-button.png" class="selectProduct" (click)="addToOrder(product)">
                 </div>
             </div>

@@ -25,7 +25,6 @@ export class OrderModalComponent {
     for (let i = 0; i < this.orderList.length; i++) {
       this.totalPrice += this.orderList[i].priceProduct
     }
-    console.log(this.totalPrice);
 
   }
 
@@ -64,7 +63,6 @@ export class OrderModalComponent {
   }
 
   createOrder(customerName: string) {
-    console.log(customerName);
     const orderData: Order = {
       client: customerName,
       products: this.orderList,
