@@ -28,15 +28,13 @@ export class FoodMenuComponent {
   orderItems: ProductToOrder[] = [];
   btnActive: string = '';
   orderForm!: FormGroup;
-  orderPrice!: number;
+  orderPrice: number = 0;
 
   constructor(
     public showProducts: ProductsService,
     private logService: AuthLoginService,
     public orders: OrdersService,
-  ) {
-
-  }
+  ) { }
 
   showSelectedItems(type: string) {
     this.btnActive = type;

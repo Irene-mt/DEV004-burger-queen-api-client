@@ -6,7 +6,7 @@
                 <img src="https://i.ibb.co/k5J0dPM/workers-list-active.png" class="icon" />
             </li>
             <li>
-                <img src="https://i.ibb.co/Hgy04Mq/products-list.png" class="icon">
+                <img src="https://i.ibb.co/Hgy04Mq/products-list.png" class="icon" (click)="navigateProducts()">
             </li>
             <li>
                 <img src="https://i.ibb.co/nmbvZRY/logout.png" class="icon" (click)="logOut()" />
@@ -29,6 +29,5 @@
             </div>
         </div>
     </article>
-    
-
+    <app-add-worker-modal></app-add-worker-modal>
 </section>

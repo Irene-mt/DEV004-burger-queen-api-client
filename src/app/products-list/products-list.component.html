@@ -1,0 +1,33 @@
+<app-header></app-header>
+<section class="productsList">
+    <nav class="options">
+        <ul>
+            <li>
+                <img src="https://i.ibb.co/BCF1vYv/workers-list.png" class="icon" (click)="navigateWorkers()">
+            </li>
+            <li>
+                <img src="https://i.ibb.co/G51dv53/products-list-active.png" class="icon">
+            </li>
+            <li>
+                <img src="https://i.ibb.co/nmbvZRY/logout.png" class="icon" (click)="logOut()">
+            </li>
+        </ul>
+    </nav>
+    <article class="workers">
+        <h1>CATEGORY PRODUCTS</h1>
+        <div class="workersRole">
+            <div class="btnsRoleContainer">
+                <button [class.active]="btnActive === 'Desayuno'" class="btnRole"
+                    (click)="showSelectedProduct('Desayuno')">BREAKFAST</button>
+                <button [class.active]="btnActive === 'meals'" class="btnRole"
+                    (click)="showSelectedProduct('meals')">MEALS</button>
+                <button [class.active]="btnActive === 'dessert'" class="btnRole"
+                    (click)="showSelectedProduct('dessert')">DESSERTS</button>
+            </div>
+            <div class="containerCards">
+                <!-- <app-workers-card [AllWorkers]="filteredWorkers"></app-workers-card> -->
+            </div>
+        </div>
+    </article>
+    <app-add-worker-modal></app-add-worker-modal>
+</section>

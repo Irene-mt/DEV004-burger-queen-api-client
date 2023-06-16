@@ -14,6 +14,7 @@
 .orderTitle {
   font-weight: 600;
   font-size: 1.3em;
+  margin: 10px 0;
 }
 
 .inpName {
@@ -116,7 +117,7 @@
   color: white;
   align-self: end;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
 }
 
@@ -125,6 +126,6 @@
   color: white;
   align-self: end;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
 }

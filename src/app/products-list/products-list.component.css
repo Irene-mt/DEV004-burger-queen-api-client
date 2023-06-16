@@ -1,0 +1,101 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+body {
+    display: block;
+}
+
+/*-----NAV STYLES-----*/
+
+.options {
+    width: 70px;
+    height: 100%;
+    background-color: white;
+    float: left;
+}
+
+ul {
+    list-style: none;
+    left: -30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+li {
+    margin-top: 15px;
+}
+
+.icon {
+    width: 45px;
+    height: auto;
+}
+
+/*-----SECTION STYLES-----*/
+
+
+h1 {
+    font-family: 'Cabin', sans-serif;
+    color: #121619;
+    font-size: 2em;
+    /* margin-left: 120px; */
+}
+
+.workersRole {
+    display: flex;
+    margin-top: -10px;
+    flex-direction: column;
+}
+
+.productsList {
+    height: 100%;
+    background-color: #F2E3C3;
+    display: flex;
+}
+
+.workers {
+    width: 80%;
+    height: 100%;
+    margin: 0 0 0 50px;
+}
+
+.btnsRoleContainer {
+    left: 50px;
+}
+
+.btnRole {
+    margin-right: 20px;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 3px;
+    padding: 10px 20px;
+    width: auto;
+    background-color: white;
+    color: #09814A;
+    border: 3px solid #09814A;
+    border-radius: 20px;
+}
+
+button.active {
+    margin-right: 20px;
+    color: white;
+    background-color: #09814A;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 3px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+}
+
+.containerCards {
+    margin-top: 30px;
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+}
