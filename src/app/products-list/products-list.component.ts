@@ -31,7 +31,7 @@ export class ProductsListComponent {
   showSelectedProduct(type: string){
     this.btnActive = type;
     this.productServ.getProducts().subscribe((data) => {
-      this.products = data;    
+      this.products = data;   
       this.selectedProducts = this.products.filter((eachProduct) => {
         return eachProduct.type === type;
       })

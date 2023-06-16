@@ -10,7 +10,7 @@
         <img src="https://i.ibb.co/P6ZGVZ4/minus-button.png" class="delete" (click)="deleteProduct(product)">
         <img src="https://i.ibb.co/PDN4nLV/add-button.png" class="add" (click)="addProduct(product)">
     </div>
-    <p class="totalPrice">TOTAL: S./{{totalPrice}}</p>
+    <p class="totalPrice">TOTAL: ${{totalPrice}}</p>
     <div class="orderBtns">
         <button class="cancelOrder" (click)="cancelOrder()">CANCEL</button>
         <button class="confirmOrder" (click)="createOrder(customerName.value)" type="submit">CONFIRM</button>

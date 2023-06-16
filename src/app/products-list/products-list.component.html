@@ -13,21 +13,23 @@
             </li>
         </ul>
     </nav>
-    <article class="workers">
+    <article class="productsArticle">
         <h1>CATEGORY PRODUCTS</h1>
         <div class="workersRole">
-            <div class="btnsRoleContainer">
-                <button [class.active]="btnActive === 'Desayuno'" class="btnRole"
-                    (click)="showSelectedProduct('Desayuno')">BREAKFAST</button>
-                <button [class.active]="btnActive === 'meals'" class="btnRole"
+            <div class="btnsTypeContainer">
+                <button [class.active]="btnActive === 'breakfast'" class="btnType"
+                    (click)="showSelectedProduct('breakfast')">BREAKFAST</button>
+                <button [class.active]="btnActive === 'meals'" class="btnType"
                     (click)="showSelectedProduct('meals')">MEALS</button>
-                <button [class.active]="btnActive === 'dessert'" class="btnRole"
+                <button [class.active]="btnActive === 'dessert'" class="btnType"
                     (click)="showSelectedProduct('dessert')">DESSERTS</button>
+                    <button [class.active]="btnActive === 'drinks'" class="btnType"
+                    (click)="showSelectedProduct('drinks')">DRINKS</button>
             </div>
             <div class="containerCards">
-                <!-- <app-workers-card [AllWorkers]="filteredWorkers"></app-workers-card> -->
+                <app-product-card [selectionProducts]="selectedProducts"></app-product-card>
             </div>
         </div>
     </article>
-    <app-add-worker-modal></app-add-worker-modal>
+    <app-add-product-modal></app-add-product-modal>
 </section>

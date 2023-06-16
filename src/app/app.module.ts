@@ -16,6 +16,8 @@ import { HeaderComponent } from './header/header.component';
 import { WorkersCardComponent } from './workers-card/workers-card.component';
 import { AddWorkerModalComponent } from './add-worker-modal/add-worker-modal.component';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { AddProductModalComponent } from './add-product-modal/add-product-modal.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ProductsListComponent } from './products-list/products-list.component';
     WorkersCardComponent,
     AddWorkerModalComponent,
     ProductsListComponent,
+    ProductCardComponent,
+    AddProductModalComponent,
     
   ],
   imports: [
