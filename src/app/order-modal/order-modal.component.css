@@ -4,11 +4,13 @@
   background-color: white;
   border-radius: 20px;
   width: 20%;
+  max-height: 550px;
   height: auto;
   padding: 20px;
   font-family: 'Cabin', sans-serif;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 }
 
 .orderTitle {
@@ -21,13 +23,12 @@
   font-family: 'Cabin', sans-serif;
   border: none;
   font-size: 16px;
-  margin: 0;
+  margin: 0 0 10px 0;
   padding: 10px;
   width: 50%;
   height: 15px;
   background-color: #F2E3C3;
   color: #121619;
-  margin-bottom: 30px;
   border-radius: 20px;
 }
 
@@ -35,7 +36,7 @@
   display: grid;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 33% 33% 33%;
-  margin: 20px 0;
+  margin: 10px 0;
   background-color: #F2E3C3;
   border-radius: 0 20px 20px 20px;
   width: 95%;
@@ -43,8 +44,9 @@
 }
 
 .imgMiniCard {
-  width: 50px;
+  width: 70px;
   height: auto;
+  margin: 15px 0 0 5px;
 }
 
 .productName {
@@ -74,8 +76,7 @@
   height: 25px;
   font-size: 1.5em;
   display: inline-block;
-  vertical-align: center;
-  margin: 2px;
+  margin: 0 15px 0 0;
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 3;
@@ -93,7 +94,7 @@
   font-size: 1.5em;
   display: inline-block;
   vertical-align: center;
-  margin: 2px;
+  margin: 0;
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 3;

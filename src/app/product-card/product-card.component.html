@@ -5,6 +5,13 @@
     <p class="id">ID: {{product.id}}</p>
     <div class="btnsProduct">
         <img src="https://i.postimg.cc/0Qv2NypZ/edit-icon.png" class="edit">
-        <img src="https://i.postimg.cc/CLqtcsyB/delete-icon.png" class="delete" (click)="deleteProduct(product.id)">
+        <img src="https://i.postimg.cc/CLqtcsyB/delete-icon.png" class="delete" (click)="selectProduct(product.id)">
+    </div>
+    <div *ngIf="selectedProduct === product.id" class="modalDelete">
+        <p>Are you sure?</p>
+        <div>
+            <button (click)="noSelectProduct()" class="cancel">CANCEL</button>
+            <button (click)="deleteProduct(product.id)" class="confirm">CONFIRM</button>
+        </div>
     </div>
 </div>

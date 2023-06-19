@@ -3,8 +3,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 
-    
-  }
+
+}
 
 .WorkerCard {
     background-color: white;
@@ -42,20 +42,62 @@
     margin: 5px 0;
 }
 
-.btnsWorker{
-display: flex;
-justify-content: end;
-width: 100%;
+.btnsWorker {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 
 }
-.edit{
+
+.edit {
     width: 30px;
     height: 30px;
     margin-right: 5px;
 }
 
-.delete{
+.delete {
     width: 30px;
     height: 30px;
     margin-right: 15px;
+}
+
+.modalDelete {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.959);
+    position: absolute;
+    z-index: 1;
+    /* Asegura que el div de confirmación aparezca por encima del contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #121619;
+    border-radius: 20px;
+    width: 150px;
+    height: 100px;
+    box-shadow: 10px 10px 15px -8px rgba(255, 143, 78, 0.75);
+    -webkit-box-shadow: 10px 10px 15px -8px rgba(255, 143, 78, 0.75);
+    -moz-box-shadow: 10px 10px 15px -8px rgba(255, 143, 78, 0.75);
+    margin-top: 50px;
+}
+
+.cancel {
+    background-color: #FE4445;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    border: none;
+    font-size: .8em;
+    
+}
+
+.confirm {
+    background-color: #09814A;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    border: none;
+    font-size: .8em;
+    margin-left: 5px;
 }
