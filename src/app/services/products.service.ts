@@ -21,4 +21,12 @@ export class ProductsService {
   deleteProduct(uid: number){
     return this.http.delete(`http://localhost:8080/products/${uid}`)
   }
+
+  getProduct(uid: number):Observable<any>{
+    return this.http.get(`http://localhost:8080/products/${uid}`)
+  }
+
+  editProduct(uid:number, body: CreateProduct){
+    return this.http.patch(`http://localhost:8080/products/${uid}`, body)
+  }
 }

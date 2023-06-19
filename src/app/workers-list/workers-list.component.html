@@ -26,11 +26,10 @@
             </div>
             <div class="containerCards">
                 <app-workers-card (showEdit)="modalToShow($event)" (workerId)="workerToEdit($event)"
-                    (hideEdit)="modalToHide($event)" [AllWorkers]="filteredWorkers"
-                    ></app-workers-card>
+                     [AllWorkers]="filteredWorkers"></app-workers-card>
             </div>
         </div>
     </article>
     <app-add-worker-modal *ngIf="showAddWorker"></app-add-worker-modal>
-    <app-edit-worker-modal *ngIf="showEditWorker" [workerId]="workerId"></app-edit-worker-modal>
+    <app-edit-worker-modal *ngIf="showEditWorker" [workerId]="workerId" (hideEdit)="modalToHide($event)"></app-edit-worker-modal>
 </section>

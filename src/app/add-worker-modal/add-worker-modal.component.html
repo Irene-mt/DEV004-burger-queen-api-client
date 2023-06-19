@@ -7,12 +7,13 @@
         <input type="password" class="password" formControlName="password">
         <p>Role:</p>
         <select name="WorkerRole" formControlName="role">
+            <option value="" selected disabled>Select role</option>
             <option value="waiter">Waiter</option>
             <option value="chef">Chef</option>
             <option value="admin">Admin</option>
         </select>
         <div class="containerBtns">
-            <button class="cancel">CANCEL</button>
+            <button class="cancel" type="reset" (click)="cancelAddWorker()">CANCEL</button>
             <button class="confirm">CONFIRM</button>
         </div>
     </form>
