@@ -6,7 +6,14 @@
     <p class="role">{{worker.role}}</p>
     <p class="id">ID: {{worker.id}}</p>
     <div class="btnsWorker">
-        <img src="https://i.postimg.cc/0Qv2NypZ/edit-icon.png" class="edit">
-        <img src="https://i.postimg.cc/CLqtcsyB/delete-icon.png" class="delete" (click)="deleteUser(worker.id)">
+        <img src="https://i.postimg.cc/0Qv2NypZ/edit-icon.png" class="edit" (click)="showEditModal(worker.id)">
+        <img src="https://i.postimg.cc/CLqtcsyB/delete-icon.png" class="delete" (click)="selectWorker(worker.id)">
+    </div>
+    <div *ngIf="selectedWorker === worker.id" class="modalDelete">
+        <p>Are you sure?</p>
+        <div>
+            <button (click)="noSelectWorker()" class="cancel">CANCEL</button>
+            <button (click)="deleteUser(worker.id)" class="confirm">CONFIRM</button>
+        </div>
     </div>
 </div>

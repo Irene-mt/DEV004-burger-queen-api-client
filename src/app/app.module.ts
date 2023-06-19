@@ -18,6 +18,7 @@ import { AddWorkerModalComponent } from './add-worker-modal/add-worker-modal.com
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { AddProductModalComponent } from './add-product-modal/add-product-modal.component';
+import { EditWorkerModalComponent } from './edit-worker-modal/edit-worker-modal.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AddProductModalComponent } from './add-product-modal/add-product-modal.
     ProductsListComponent,
     ProductCardComponent,
     AddProductModalComponent,
+    EditWorkerModalComponent,
     
   ],
   imports: [

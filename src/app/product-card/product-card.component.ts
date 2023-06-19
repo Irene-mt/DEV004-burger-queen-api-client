@@ -8,11 +8,20 @@ import { ProductsService } from '../services/products.service';
   styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
-@Input() selectionProducts: Product[] = []
+@Input() selectionProducts: Product[] = [];
+selectedProduct!: any;
 
 constructor (
   private products: ProductsService
 ){}
+
+selectProduct(workerId: number) {
+  this.selectedProduct = workerId;
+}
+
+noSelectProduct(){
+  this.selectedProduct = null;
+}
 
 deleteProduct(uid: number){
   this.products.deleteProduct(uid).subscribe(

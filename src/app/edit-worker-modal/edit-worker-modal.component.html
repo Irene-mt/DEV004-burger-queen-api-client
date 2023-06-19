@@ -1,10 +1,10 @@
-<article class="addWorker">
-    <form [formGroup]="workerForm" (ngSubmit)="addWorker()">
-        <h6>ADD WORKER</h6>
+<article class="editWorker">
+    <form [formGroup]="workerForm" (ngSubmit)="editWorker()">
+        <h6>EDIT WORKER</h6>
         <p>Email:</p>
         <input type="email" class="email" formControlName="email">
         <p>Password:</p>
-        <input type="password" class="password" formControlName="password">
+        <input type="text" class="password" formControlName="password">
         <p>Role:</p>
         <select name="WorkerRole" formControlName="role">
             <option value="waiter">Waiter</option>
@@ -12,9 +12,8 @@
             <option value="admin">Admin</option>
         </select>
         <div class="containerBtns">
-            <button class="cancel">CANCEL</button>
+            <button class="cancel" (click)="cancelEdit()">CANCEL</button>
             <button class="confirm">CONFIRM</button>
         </div>
     </form>
 </article>
-<!-- <h5 class="message">{{messageConfirm}}</h5> -->

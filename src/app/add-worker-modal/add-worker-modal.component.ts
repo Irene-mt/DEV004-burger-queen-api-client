@@ -7,7 +7,7 @@ import { UsersService } from '../services/users.service';
   templateUrl: './add-worker-modal.component.html',
   styleUrls: ['./add-worker-modal.component.css']
 })
-export class AddWorkerModalComponent {
+export class AddWorkerModalComponent{
   workerForm!: FormGroup;
   messageConfirm!: string;
 

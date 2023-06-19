@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Worker } from '../interfaces/worker';
 import { UsersService } from '../services/users.service';
 import { AuthLoginService } from '../services/auth-login.service';
@@ -10,16 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./workers-list.component.css']
 })
 export class WorkersListComponent {
-  // allWorkers: Array<Worker> = [{
-  //   id: 0,
-  //   email: '',
-  //   role: '',
-  //   password: '',
-  // }];
-
   filteredWorkers: Worker[] = [];
   btnActive: string = '';
   errorMessage: string = '';
+  showAddWorker: boolean = true;
+  showEditWorker!: boolean;
+  workerId!: number;
 
   constructor(
     private logService: AuthLoginService,
@@ -27,11 +23,21 @@ export class WorkersListComponent {
     private router: Router,
   ) { }
 
-  // ngOnInit(): void {
-  //   this.users.getAllUsers().subscribe((response) => {
-  //     console.log(response);
-  //   });
-  // }
+  modalToShow(booleanValue: boolean){
+    this.showEditWorker = booleanValue;
+    this.showAddWorker = false;
+  }
+
+  workerToEdit(id: number){
+    this.workerId = id;
+  }
+
+  modalToHide(booleanValue:any){
+    console.log(booleanValue)
+    this.showEditWorker = booleanValue;
+    this.showAddWorker = true;
+
+  }
 
   showSelectedWorkers(role: string) {
     this.btnActive = role;
@@ -41,36 +47,18 @@ export class WorkersListComponent {
         this.filteredWorkers = workers.filter((eachWorker) => {
               return eachWorker.role === role;
             })
-            console.log(this.filteredWorkers);
-            
         return this.filteredWorkers
       },
-      
     error: err=>this.errorMessage = err
-    }
-      
-    )
+    })
   }
 
   navigateProducts(){
     this.router.navigate(['/products-list']);
   }
 
-
-
   logOut() {
     this.logService.logout();
   }
 
 }
-
-// (res) => {
-//   console.log(res);
-
-//   //this.allWorkers = users;
-//   this.filteredWorkers = this.allWorkers.filter((eachWorker) => {
-//     console.log(eachWorker);
-    
-//     return eachWorker.role === role;
-//   })
-// }
