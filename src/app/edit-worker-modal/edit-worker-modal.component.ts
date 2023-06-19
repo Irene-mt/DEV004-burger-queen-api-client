@@ -14,12 +14,11 @@ export class EditWorkerModalComponent {
   workerForm!: FormGroup;
   messageConfirm!: string;
   userInfo!: Worker;
-  decryptedPassword!: string;
 
   constructor(
     private fb: FormBuilder,
     private user: UsersService,
-  ) { 
+  ) {
     this.workerForm = new FormGroup({
       email: new FormControl(),
       password: new FormControl(),
@@ -28,17 +27,13 @@ export class EditWorkerModalComponent {
   }
 
   ngOnInit() {
-    console.log('xxxx', this.workerId);
-    this.user.getUser(this.workerId).subscribe((user)=>{
+    this.user.getUser(this.workerId).subscribe((user) => {
       this.userInfo = user;
-      console.log(user);
-      this.createForm()
-      
+      this.createForm();
     })
-    
   }
 
-  createForm(){
+  createForm() {
     this.workerForm = this.fb.group({
       email: [this.userInfo.email, Validators.required],
       password: [this.userInfo.password, Validators.required],
@@ -46,25 +41,20 @@ export class EditWorkerModalComponent {
     })
   }
 
-  editWorker(){
+  editWorker() {
     this.user.editUser(this.userInfo.id, this.workerForm.value)
-    .subscribe(
-      (res) => {
-        console.log(res);
-        this.messageConfirm = 'User created!'
+      .subscribe(
+        (res) => {
           location.reload();
-
-
-      }),
-    (err: Error) => {
-      console.log(err);
-      this.messageConfirm = 'Something went wrong!';
-      this.ngOnInit();
-    }
+        }),
+      (err: Error) => {
+        console.log(err);
+        this.ngOnInit();
+      }
 
   }
 
-  cancelEdit(){
+  cancelEdit() {
     this.hideEdit.emit(false)
   }
 

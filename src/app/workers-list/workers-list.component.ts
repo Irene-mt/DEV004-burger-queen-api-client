@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './workers-list.component.html',
   styleUrls: ['./workers-list.component.css']
 })
+
 export class WorkersListComponent {
   filteredWorkers: Worker[] = [];
   btnActive: string = '';
@@ -28,15 +29,13 @@ export class WorkersListComponent {
     this.showAddWorker = false;
   }
 
-  workerToEdit(id: number){
-    this.workerId = id;
-  }
-
   modalToHide(booleanValue:any){
-    console.log(booleanValue)
     this.showEditWorker = booleanValue;
     this.showAddWorker = true;
+  }
 
+  workerToEdit(id: number){
+    this.workerId = id;
   }
 
   showSelectedWorkers(role: string) {

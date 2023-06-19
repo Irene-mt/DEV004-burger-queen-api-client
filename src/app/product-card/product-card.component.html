@@ -4,7 +4,7 @@
     <p class="price">${{product.price}}</p>
     <p class="id">ID: {{product.id}}</p>
     <div class="btnsProduct">
-        <img src="https://i.postimg.cc/0Qv2NypZ/edit-icon.png" class="edit">
+        <img src="https://i.postimg.cc/0Qv2NypZ/edit-icon.png" class="edit" (click)="showEditModal(product.id)">
         <img src="https://i.postimg.cc/CLqtcsyB/delete-icon.png" class="delete" (click)="selectProduct(product.id)">
     </div>
     <div *ngIf="selectedProduct === product.id" class="modalDelete">

@@ -43,4 +43,8 @@ export class AddProductModalComponent {
         this.ngOnInit();
       }
   }
+
+  cancelAdd(){
+    this.productForm.reset()
+  }
 }

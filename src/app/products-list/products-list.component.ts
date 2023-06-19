@@ -21,6 +21,9 @@ export class ProductsListComponent {
 
   selectedProducts: Product[] = []
   btnActive: string = '';
+  showAddProduct: boolean = true;
+  showEditProduct!: boolean;
+  productId!: number;
 
   constructor(
     private logService: AuthLoginService,
@@ -28,17 +31,31 @@ export class ProductsListComponent {
     private router: Router,
   ) { }
 
-  showSelectedProduct(type: string){
+  modalToShow(booleanValue: boolean) {
+    this.showAddProduct = false;
+    this.showEditProduct = booleanValue;
+  }
+
+  modalToHide(booleanValue: boolean){
+    this.showAddProduct = true;
+    this.showEditProduct = booleanValue;
+  }
+
+  productToEdit(id: any) {
+    this.productId = id;
+  }
+
+  showSelectedProduct(type: string) {
     this.btnActive = type;
     this.productServ.getProducts().subscribe((data) => {
-      this.products = data;   
+      this.products = data;
       this.selectedProducts = this.products.filter((eachProduct) => {
         return eachProduct.type === type;
       })
     })
   }
 
-  navigateWorkers(){
+  navigateWorkers() {
     this.router.navigate(['/workers-list']);
   }
 

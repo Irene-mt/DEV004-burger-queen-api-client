@@ -43,4 +43,8 @@ export class AddWorkerModalComponent{
 
   }
 
+  cancelAddWorker(){
+    this.workerForm.reset()
+  }
+
 }

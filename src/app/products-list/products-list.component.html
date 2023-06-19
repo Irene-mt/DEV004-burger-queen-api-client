@@ -27,9 +27,11 @@
                     (click)="showSelectedProduct('drinks')">DRINKS</button>
             </div>
             <div class="containerCards">
-                <app-product-card [selectionProducts]="selectedProducts"></app-product-card>
+                <app-product-card [selectionProducts]="selectedProducts"
+                (showEdit)="modalToShow($event)" (productId)="productToEdit($event)"></app-product-card>
             </div>
         </div>
     </article>
-    <app-add-product-modal></app-add-product-modal>
+    <app-add-product-modal *ngIf="showAddProduct"></app-add-product-modal>
+    <app-edit-product-modal *ngIf="showEditProduct" [productId]="productId" (hideEdit)="modalToHide($event)"></app-edit-product-modal>
 </section>

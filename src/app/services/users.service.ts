@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { StorageService } from './storage.service';
 import { CreateWorker } from '../interfaces/create-worker';
-import { Worker } from '../interfaces/worker';
 import { Observable } from 'rxjs';
 
 @Injectable({
