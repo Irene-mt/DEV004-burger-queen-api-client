@@ -43,7 +43,7 @@ export class LoginComponent {
           } else if (role === 'admin') {
             this.router.navigate(['/workers-list'])
           } else if (role === 'chef') {
-            this.router.navigate(['/workers-list'])
+            this.router.navigate(['/pending-orders'])
           }
         },
         // get any error of the request

@@ -3,11 +3,14 @@ import { ProductToOrder } from '../interfaces/product-to-order';
 import { StorageService } from '../services/storage.service';
 import { OrdersService } from '../services/orders.service';
 import { Order } from '../interfaces/order';
+import { DatePipe } from '@angular/common';
+import { CreateOrder } from '../interfaces/create-order';
 
 @Component({
   selector: 'app-order-modal',
   templateUrl: './order-modal.component.html',
-  styleUrls: ['./order-modal.component.css']
+  styleUrls: ['./order-modal.component.css'],
+  providers: [DatePipe]
 })
 export class OrderModalComponent {
   @Input() orderList: ProductToOrder[] = [];
@@ -16,6 +19,7 @@ export class OrderModalComponent {
   constructor(
     private storage: StorageService,
     private orders: OrdersService,
+    private datePipe: DatePipe,
   ) { }
 
   userId = this.storage.getIdUser();
@@ -63,15 +67,18 @@ export class OrderModalComponent {
   }
 
   createOrder(customerName: string) {
-    const orderData: Order = {
+    const date = new Date();
+    const convertedDate = this.datePipe.transform(date, 'yyyy-MM-dd HH:mm:ss');
+    const orderData: CreateOrder = {
       client: customerName,
       products: this.orderList,
       status: 'pending',
       userId: this.userId,
-      dateEntry: new Date()
+      dateEntry: convertedDate,
+      currentTime: 0,
     }
     this.orders.postOrder(orderData).subscribe((res)=>{
-      console.log(res);
+      console.log('info', res);
       
     })
     this.orderList.splice(0);
