@@ -20,6 +20,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { AddProductModalComponent } from './add-product-modal/add-product-modal.component';
 import { EditWorkerModalComponent } from './edit-worker-modal/edit-worker-modal.component';
 import { EditProductModalComponent } from './edit-product-modal/edit-product-modal.component';
+import { PendingOrdersComponent } from './pending-orders/pending-orders.component';
+import { PendingOrderCardComponent } from './pending-order-card/pending-order-card.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { EditProductModalComponent } from './edit-product-modal/edit-product-mod
     AddProductModalComponent,
     EditWorkerModalComponent,
     EditProductModalComponent,
+    PendingOrdersComponent,
+    PendingOrderCardComponent,
     
   ],
   imports: [

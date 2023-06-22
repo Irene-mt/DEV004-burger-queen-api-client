@@ -1,0 +1,22 @@
+<app-header></app-header>
+<section class="pendingOrdersSection">
+    <nav class="options">
+        <ul>
+            <li>
+                <img src="https://i.ibb.co/TMyQx3y/orders-active.png" class="icon" />
+            </li>
+            <li>
+                <img src="https://i.ibb.co/KzPsZst/history.png" class="icon">
+            </li>
+            <li>
+                <img src="https://i.ibb.co/nmbvZRY/logout.png" class="icon" (click)="logOut()"/>
+            </li>
+        </ul>
+    </nav>
+    <article class="ordersArticle">
+        <h1>PENDING ORDERS</h1>
+        <div class="containerCards">
+            <app-pending-order-card [pendingOrders]="pendingOrders"></app-pending-order-card>
+        </div>
+        
+    </article>

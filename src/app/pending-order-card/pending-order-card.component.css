@@ -1,0 +1,117 @@
+:host {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    gap: 20px;
+}
+
+p {
+    font-family: 'Cabin', sans-serif;
+}
+
+.eachOrder {
+    background-color: white;
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.order {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 5px 5px 0 10px;
+}
+
+.client {
+    margin: 0 10px 0 10px;
+    align-self: flex-end;
+}
+
+
+.date {
+    margin: 0 10px 20px 10px;
+    align-self: flex-end;
+    font-size: .8em;
+
+}
+
+.eachProduct {
+    display: flex;
+}
+
+.qty {
+    color: #FF8F4E;
+    margin: 5px 10px 10px 10px;
+}
+
+.name {
+    margin: 5px 0 10px 0;
+}
+.btnsContainer{
+    display: flex;
+    justify-content: flex-end
+}
+.completeOrder {
+    background-color: #09814A;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin: 20px 0 0 0;
+}
+
+.cancelOrder {
+    background-color: #FE4445;
+    color: white;
+    align-self: end;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+}
+
+.modalDelete {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.959);
+    position: absolute;
+    z-index: 1;
+    /* Asegura que el div de confirmación aparezca por encima del contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #121619;
+    border-radius: 20px;
+    width: 150px;
+    height: 100px;
+    box-shadow: 10px 10px 15px -8px rgba(255, 143, 78, 0.75);
+    -webkit-box-shadow: 10px 10px 15px -8px rgba(255, 143, 78, 0.75);
+    -moz-box-shadow: 10px 10px 15px -8px rgba(255, 143, 78, 0.75);
+    margin: 50px;
+}
+
+.cancel {
+    background-color: #FE4445;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    border: none;
+    font-size: .8em;
+
+}
+
+.confirm {
+    background-color: #09814A;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    border: none;
+    font-size: .8em;
+    margin-left: 5px;
+}

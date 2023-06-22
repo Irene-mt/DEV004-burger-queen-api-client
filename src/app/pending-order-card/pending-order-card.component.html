@@ -1,0 +1,21 @@
+<div *ngFor="let eachOrder of pendingOrders" class="eachOrder">
+    <p class="order">ORDER#{{eachOrder.id}}</p>
+    <p class="client">{{eachOrder.client}}</p>
+    <P class="date">{{eachOrder.dateEntry}}</P>
+    <div *ngFor="let eachProduct of eachOrder.products" class="eachProduct">
+        <p class="qty">{{eachProduct.qty}}</p>
+        <p class="name">{{eachProduct.product.name}}</p>
+        
+    </div>
+    <div class="btnsContainer">
+        <button class="cancelOrder" (click)="cancelOrder(eachOrder.id)">CANCEL</button>
+        <button class="completeOrder" (click)="completeOrder(eachOrder.id, eachOrder.dateEntry)">COMPLETE</button>
+    </div>
+    <div *ngIf="selectedOrder === eachOrder.id" class="modalDelete">
+        <p>Are you sure?</p>
+        <div>
+            <button (click)="noSelectOrder()" class="cancel">CANCEL</button>
+            <button (click)="deleteOrder(eachOrder.id)" class="confirm">CONFIRM</button>
+        </div>
+    </div>
+</div>
